@@ -11,11 +11,30 @@ parser_microservice = FastAPI(
 
 parser_microservice.include_router(visits_router, prefix="/visits")
 
-parser_microservice.mount("/static", StaticFiles(directory="frontend/static"), name="static")
 
 
-templates = Jinja2Templates(directory="frontend/static")
 
-@parser_microservice.get("/", response_class=HTMLResponse)
-async def read_root(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#parser_microservice.mount("/static", StaticFiles(directory="frontend/static"), name="static")
+
+
+#templates = Jinja2Templates(directory="frontend/static")
+
+#@parser_microservice.get("/", response_class=HTMLResponse)
+#async def read_root(request: Request):
+#    return templates.TemplateResponse("index.html", {"request": request})
